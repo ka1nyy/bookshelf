@@ -117,3 +117,10 @@ input {
   font-weight: 700;
   cursor: pointer;
 }
+
+.error {
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: #7f1d1d;
+  color: #fecaca;
+}

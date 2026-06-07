@@ -28,17 +28,25 @@ const mockBooks = [
 
 function App() {
   const [books, setBooks] = useState([])
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState("")
 
   function handleSearch(query) {
-    console.log("Search query:", query)
-    setBooks(mockBooks)
+    setLoading(true)
+    setError("")
+
+    setTimeout(() => {
+      console.log("Search query:", query)
+      setBooks(mockBooks)
+      setLoading(false)
+    }, 500);
   }
 
   return (
     <main className="app">
       <Header />
       <SearchBar onSearch={handleSearch}/>
-      <SearchResults books={books}/>
+      <SearchResults books={books} loading={loading} error={error} />
       <Library />
     </main>
   )
