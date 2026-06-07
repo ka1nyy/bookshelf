@@ -8,7 +8,7 @@ function SearchResults({ books, loading, error }) {
       {loading && <p className="muted">Loading books...</p>}
       {error && <p className="error">{error}</p>}
 
-      {!loading && !error && books.length === 0 & (
+      {!loading && !error && books.length === 0 && (
         <p className="muted">Search results will appear here.</p>
       )}
 

@@ -4,9 +4,9 @@
 
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #0f172a;
-  color: #e5e7eb;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #111827;
+  color: #f3f4f6;
 }
 
 button,
@@ -14,113 +14,182 @@ input {
   font: inherit;
 }
 
-.app {
-  width: min(1120px, 100%);
-  margin: 0 auto;
-  min-height: 100vh;
-  padding: 40px 20px;
+button {
+  cursor: pointer;
 }
 
+.app {
+  width: 100%;
+  min-height: 100vh;
+  padding: 28px 48px;
+}
+
+/* Header */
+
 .hero {
-  padding: 40px;
-  border-radius: 24px;
-  background: linear-gradient(135deg, #1e293b, #312e81);
-  margin-bottom: 24px;
+  width: 100%;
+  padding: 32px 36px;
+  margin-bottom: 22px;
+  background: #1f2937;
+  border-left: 6px solid #f59e0b;
 }
 
 .eyebrow {
-  color: #93c5fd;
+  margin: 0 0 10px;
+  color: #fbbf24;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  font-size: 13px;
+  letter-spacing: 0.1em;
+  font-size: 12px;
   font-weight: 700;
 }
 
 .hero h1 {
-  margin: 8px 0;
-  font-size: 52px;
+  margin: 0 0 12px;
+  font-size: 48px;
+  line-height: 1;
+  letter-spacing: -1px;
 }
 
 .hero-text {
-  max-width: 620px;
-  color: #cbd5e1;
-  font-size: 18px;
+  max-width: 760px;
+  margin: 0;
+  color: #d1d5db;
+  font-size: 17px;
+  line-height: 1.5;
 }
 
+/* Sections */
+
 .panel {
-  background: #111827;
-  border: 1px solid #1f2937;
-  border-radius: 20px;
-  padding: 24px;
-  margin-bottom: 20px;
+  width: 100%;
+  padding: 24px 26px;
+  margin-bottom: 18px;
+  background: #161f2e;
+  border: 1px solid #2d3748;
 }
 
 .panel h2 {
-  margin-top: 0;
+  margin: 0 0 18px;
+  font-size: 24px;
+  letter-spacing: -0.3px;
 }
+
+.muted {
+  color: #9ca3af;
+}
+
+/* Search form */
 
 .search-form {
   display: flex;
-  gap: 12px;
+  gap: 10px;
+  width: 100%;
 }
 
 .search-form input {
   flex: 1;
-  padding: 14px 16px;
-  border-radius: 12px;
-  border: 1px solid #334155;
-  background: #020617;
-  color: #e5e7eb;
+  min-width: 0;
+  padding: 13px 14px;
+  border: 1px solid #4b5563;
+  background: #0b1120;
+  color: #f9fafb;
+  outline: none;
+}
+
+.search-form input:focus {
+  border-color: #f59e0b;
+}
+
+.search-form input::placeholder {
+  color: #6b7280;
 }
 
 .search-form button {
   border: 0;
-  border-radius: 12px;
-  padding: 14px 20px;
-  background: #2563eb;
-  color: white;
-  cursor: pointer;
+  padding: 13px 22px;
+  background: #f59e0b;
+  color: #111827;
+  font-weight: 700;
 }
 
 .search-form button:hover {
-  background: #1d4ed8;
+  background: #d97706;
 }
 
-.muted {
-  color: #94a3b8;
-}
+/* Search results */
 
 .book-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 14px;
 }
-	
+
 .book-card {
+  min-height: 150px;
   padding: 18px;
-  border: 1px solid #334155;
-  border-radius: 16px;
-  background: #020617;
+  background: #0b1120;
+  border: 1px solid #374151;
 }
 
 .book-card h3 {
-  margin: 0 0 8px;
+  margin: 0 0 10px;
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+.book-card p {
+  margin: 8px 0;
+  color: #d1d5db;
+}
+
+.book-card .muted {
+  color: #93c5fd;
 }
 
 .book-card button {
-  margin-top: 12px;
-  border: 0;
-  border-radius: 10px;
+  margin-top: 14px;
+  border: 1px solid #16a34a;
   padding: 10px 14px;
-  background: #22c55e;
-  color: #052e16;
+  background: transparent;
+  color: #86efac;
   font-weight: 700;
-  cursor: pointer;
 }
+
+.book-card button:hover {
+  background: #14532d;
+  color: #dcfce7;
+}
+
+/* Error */
 
 .error {
   padding: 12px 14px;
-  border-radius: 12px;
-  background: #7f1d1d;
+  margin-bottom: 14px;
+  background: #3f1d1d;
+  border-left: 4px solid #ef4444;
   color: #fecaca;
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  .app {
+    padding: 18px;
+  }
+
+  .hero {
+    padding: 26px 22px;
+  }
+
+  .hero h1 {
+    font-size: 38px;
+  }
+
+  .search-form {
+    flex-direction: column;
+  }
+
+  .search-form button {
+    width: 100%;
+  }
 }
