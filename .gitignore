@@ -1,0 +1,19 @@
+# Node
+node_modules/
+dist/
+.env
+
+# Golang
+bin/
+tmp/
+*.exe
+
+# DB
+*.db 
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log  
